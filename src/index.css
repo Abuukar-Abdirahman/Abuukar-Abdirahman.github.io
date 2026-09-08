@@ -1,0 +1,202 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap");
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ─────────────────────────────────────────────────────────────
+   DESIGN TOKENS — change these to re-theme the entire site.
+   `accent` is the bright brand colour used for fills and graphics.
+   `accent-ink` is the darker variant used for text, so small type
+   still passes WCAG AA contrast against the canvas.
+   ───────────────────────────────────────────────────────────── */
+@theme {
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-canvas: #fbfaf9;
+  --color-surface: #f4f1ee;
+  --color-card: #ffffff;
+  --color-border: #e7e2db;
+  --color-hairline: #efeae4;
+  --color-ink: #17130f;
+  --color-muted: #6b625a;
+  --color-accent: #ff5a1f;
+  --color-accent-ink: #c2410c;
+  --color-accent-2: #ea580c;
+  --color-accent-soft: #ffece3;
+
+  --shadow-soft: 0 1px 2px rgba(23, 19, 15, 0.04), 0 12px 32px -14px rgba(23, 19, 15, 0.14);
+  --shadow-lift: 0 2px 10px rgba(23, 19, 15, 0.06), 0 28px 56px -24px rgba(23, 19, 15, 0.26);
+  --shadow-glow: 0 18px 40px -18px rgba(255, 90, 31, 0.55);
+}
+
+.dark {
+  --color-canvas: #0c0a09;
+  --color-surface: #14100e;
+  --color-card: #1a1614;
+  --color-border: #2e2825;
+  --color-hairline: #241f1c;
+  --color-ink: #faf8f6;
+  --color-muted: #a49a92;
+  --color-accent: #ff7a45;
+  --color-accent-ink: #ff8f60;
+  --color-accent-2: #ff5a1f;
+  --color-accent-soft: rgba(255, 122, 69, 0.13);
+
+  --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.4), 0 12px 32px -14px rgba(0, 0, 0, 0.7);
+  --shadow-lift: 0 2px 10px rgba(0, 0, 0, 0.45), 0 28px 56px -24px rgba(0, 0, 0, 0.85);
+  --shadow-glow: 0 18px 40px -18px rgba(255, 122, 69, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+  /* Keeps anchored sections clear of the fixed navbar. */
+  scroll-padding-top: 6.5rem;
+}
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-synthesis-weight: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Display type is set tight and optically balanced. */
+.font-display {
+  font-feature-settings: "ss01", "ss02";
+  letter-spacing: -0.03em;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+/* ── Ambient background ─────────────────────────────────────── */
+/* A soft warm bloom anchored to the hero, plus a fine grain layer
+   that stops the large flat areas from looking plasticky.        */
+.ambient {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.ambient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(60% 45% at 12% -5%, rgba(255, 90, 31, 0.13) 0%, transparent 62%),
+    radial-gradient(45% 40% at 92% 8%, rgba(255, 138, 92, 0.1) 0%, transparent 60%);
+}
+.dark .ambient::before {
+  background:
+    radial-gradient(60% 45% at 12% -5%, rgba(255, 122, 69, 0.16) 0%, transparent 62%),
+    radial-gradient(45% 40% at 92% 8%, rgba(255, 90, 31, 0.09) 0%, transparent 60%);
+}
+.ambient::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.32'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+}
+.dark .ambient::after {
+  opacity: 0.28;
+  mix-blend-mode: screen;
+}
+
+/* ── Utilities ──────────────────────────────────────────────── */
+.grid-lines {
+  background-image:
+    linear-gradient(to right, var(--color-hairline) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-hairline) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(70% 60% at 50% 40%, #000 0%, transparent 100%);
+}
+
+/* Used for the oversized outlined word in the hero. */
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--color-border);
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+.animate-float {
+  animation: float 7s ease-in-out infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* The track renders its children twice, so half a loop is seamless. */
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee 38s linear infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+  70% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.animate-pulse-ring {
+  animation: pulse-ring 2.4s cubic-bezier(0.24, 0.6, 0.35, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-marquee,
+  .animate-pulse-ring {
+    animation: none;
+  }
+  .reveal,
+  .reveal * {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
