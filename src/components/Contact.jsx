@@ -125,7 +125,8 @@ export default function Contact() {
             delay={140}
             as="form"
             onSubmit={submit}
-            className="rounded-3xl border border-border bg-card p-7 sm:p-9"
+            /* self-start stops the grid stretching the card past its content. */
+            className="self-start rounded-3xl border border-border bg-card p-7 sm:p-9"
           >
             <div className="grid gap-5 sm:grid-cols-2">
               <label className="flex flex-col gap-2 font-mono text-[11px] font-semibold uppercase tracking-[0.12em] text-muted">
