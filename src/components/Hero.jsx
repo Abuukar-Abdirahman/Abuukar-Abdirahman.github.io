@@ -124,19 +124,23 @@ export default function Hero() {
           }`}
           style={{ transitionDelay: "180ms" }}
         >
+          {/* Offset composition: an accent slab sits behind and to the
+              bottom-right, with the framed photo overlapping it top-left.
+              Built for a rectangular photo — a cut-out PNG would instead
+              want the photo sitting directly on the slab. */}
           <div className="relative aspect-[5/5.6]">
-            {/* Solid accent slab — the portrait reads as standing in front of it. */}
-            <div className="absolute inset-x-4 bottom-0 top-10 rounded-[2rem] bg-accent" />
-            <div className="grid-lines absolute inset-x-4 bottom-0 top-10 rounded-[2rem] opacity-30" />
+            <div className="absolute inset-y-8 left-10 right-0 rounded-[2rem] bg-accent" />
+            <div className="grid-lines absolute inset-y-8 left-10 right-0 rounded-[2rem] opacity-25" />
 
-            {/* Outlined duplicate, offset, for depth. */}
-            <div className="absolute inset-x-4 bottom-0 top-10 translate-x-3 translate-y-3 rounded-[2rem] border border-border" />
-
-            <img
-              src="/portrait.png"
-              alt={`Portrait of ${PROFILE.name}`}
-              className="absolute inset-x-0 bottom-0 mx-auto h-[97%] w-auto object-contain drop-shadow-[0_28px_38px_rgba(23,19,15,0.3)]"
-            />
+            <div className="absolute inset-y-0 left-0 right-10 overflow-hidden rounded-[2rem] border border-border bg-card shadow-lift">
+              <img
+                src="/portrait.png"
+                alt={`Portrait of ${PROFILE.name}`}
+                className="h-full w-full object-cover object-top"
+              />
+              {/* Warms the cool studio backdrop so it sits with the palette. */}
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-accent/25 via-transparent to-transparent" />
+            </div>
           </div>
 
           {/* "Working with" card, floating over the bottom-left corner. */}
