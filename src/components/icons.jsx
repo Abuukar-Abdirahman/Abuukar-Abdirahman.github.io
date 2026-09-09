@@ -29,6 +29,8 @@ export const Check = (p) => <I {...p}><path d="m5 12 4.5 4.5L19 7" /></I>;
 export const ArrowDown = (p) => <I {...p}><path d="M12 5v14M6 13l6 6 6-6" /></I>;
 export const Copy = (p) => <I {...p}><rect x="9" y="9" width="12" height="12" rx="2" /><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" /></I>;
 export const Clock = (p) => <I {...p}><circle cx="12" cy="12" r="9" /><path d="M12 7v5.2l3.2 2" /></I>;
+export const Alert = (p) => <I {...p}><circle cx="12" cy="12" r="9" /><path d="M12 7.5v5M12 16.2v.3" /></I>;
+export const Spinner = (p) => <I {...p}><path d="M12 3a9 9 0 1 0 9 9" /></I>;
 
 const MAP = { code: Code, phone: Phone, database: Database, server: Server, plug: Plug, sparkle: Sparkle, coffee: Coffee, pin: Pin, graduation: Graduation, globe: Globe };
 export const Icon = ({ name, className }) => { const C = MAP[name] || Code; return <C className={className} />; };

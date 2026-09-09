@@ -24,6 +24,19 @@ export const PROFILE = {
   available: true, // set false to hide the "available for work" badge
 };
 
+// ── Contact form ─────────────────────────────────────────────
+// Messages are relayed to PROFILE.email by FormSubmit. No account, no API key.
+//
+// ACTIVATION (once only): the first message ever sent through this form makes
+// FormSubmit email you a confirmation link. Click it, and every later message
+// is delivered straight to your inbox. Until you do, submissions are held.
+//
+// Optional: after activating, FormSubmit gives you a random alias like
+// "a1b2c3d4e5f6". Swapping the email below for that alias keeps your address
+// out of the page source. Not required — your email is already shown on the
+// contact section anyway.
+export const FORM_ENDPOINT = `https://formsubmit.co/ajax/${PROFILE.email}`;
+
 export const CURRENTLY = [
   "Laravel & FilamentPHP",
   "Flutter & Firebase",
