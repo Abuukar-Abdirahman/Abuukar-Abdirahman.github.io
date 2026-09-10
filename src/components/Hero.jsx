@@ -124,23 +124,18 @@ export default function Hero() {
           }`}
           style={{ transitionDelay: "180ms" }}
         >
-          {/* Offset composition: an accent slab sits behind and to the
-              bottom-right, with the framed photo overlapping it top-left.
-              Built for a rectangular photo — a cut-out PNG would instead
-              want the photo sitting directly on the slab. */}
-          <div className="relative aspect-[5/5.6]">
-            <div className="absolute inset-y-8 left-10 right-0 rounded-[2rem] bg-accent" />
-            <div className="grid-lines absolute inset-y-8 left-10 right-0 rounded-[2rem] opacity-25" />
+          {/* The portrait is a transparent cut-out, so it carries no frame,
+              border, rounding or background of its own — it stands directly
+              on the accent slab and breaks past its top edge. */}
+          <div className="relative aspect-[5/6]">
+            <div className="absolute inset-x-2 bottom-0 top-16 rounded-[2rem] bg-accent" />
+            <div className="grid-lines absolute inset-x-2 bottom-0 top-16 rounded-[2rem] opacity-25" />
 
-            <div className="absolute inset-y-0 left-0 right-10 overflow-hidden rounded-[2rem] border border-border bg-card shadow-lift">
-              <img
-                src="/portrait.png"
-                alt={`Portrait of ${PROFILE.name}`}
-                className="h-full w-full object-cover object-top"
-              />
-              {/* Warms the cool studio backdrop so it sits with the palette. */}
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-accent/25 via-transparent to-transparent" />
-            </div>
+            <img
+              src="/portrait.png"
+              alt={`Portrait of ${PROFILE.name}`}
+              className="absolute inset-x-0 bottom-0 mx-auto h-full w-auto object-contain drop-shadow-[0_24px_34px_rgba(23,19,15,0.34)]"
+            />
           </div>
 
           {/* "Working with" card, floating over the bottom-left corner. */}
