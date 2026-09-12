@@ -68,6 +68,9 @@ export const STATS = [
   { value: 3, suffix: "", label: "Languages spoken" },
 ];
 
+// Heading shown above the About paragraphs.
+export const ABOUT_TITLE = "Owning the whole stack, from schema to production";
+
 // First entry is set in large display type; the second is body text.
 export const ABOUT = [
   `I'm a full-stack developer in Mogadishu. I build the systems businesses run on — the database, the API and the admin tools behind them — and the mobile apps people actually hold.`,

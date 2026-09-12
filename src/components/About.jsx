@@ -1,4 +1,4 @@
-import { ABOUT, HIGHLIGHTS, PROFILE } from "../data";
+import { ABOUT, ABOUT_TITLE, HIGHLIGHTS, PROFILE } from "../data";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
 import { Icon, Download } from "./icons";
@@ -11,7 +11,7 @@ export default function About() {
           <SectionHeading
             index="01"
             label="About me"
-            title="Owning the whole stack, from database to app store"
+            title={ABOUT_TITLE}
             align="left"
           />
         </Reveal>
