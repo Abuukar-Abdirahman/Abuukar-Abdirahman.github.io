@@ -68,9 +68,10 @@ export const STATS = [
   { value: 3, suffix: "", label: "Languages spoken" },
 ];
 
+// First entry is set in large display type; the second is body text.
 export const ABOUT = [
-  `Full-stack developer with 3+ years of experience building backend systems and web apps in Laravel, plus mobile apps with Flutter and Firebase.`,
-  `I'm skilled in REST API design, FilamentPHP admin panels, database design and third-party payment and telecom integrations. I'm comfortable owning a project end to end — from architecture through deployment — as an in-house engineer, a freelancer and a contributor to university systems.`,
+  `I'm a full-stack developer in Mogadishu. I build the systems businesses run on — the database, the API and the admin tools behind them — and the mobile apps people actually hold.`,
+  `Most of my work is in Laravel, with Flutter on mobile. A lot of it is transactional — orders, payments, and integrations with telecom providers — where there's no undo button and it has to be right the first time. Over three years I've built these systems for clients in telecom, retail, education and the NGO sector. I like owning a project the whole way through, from designing the database to deploying the server it runs on — in-house, as a freelancer, and on systems for my university.`,
 ];
 
 export const HIGHLIGHTS = [
