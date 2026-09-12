@@ -25,6 +25,9 @@
   --color-accent-ink: #c2410c;
   --color-accent-2: #ea580c;
   --color-accent-soft: #ffece3;
+  /* Stroke colour for the outlined surname in the hero. Deliberately not
+     --color-border: that is near-invisible against the canvas. */
+  --color-outline: #a39990;
 
   --shadow-soft: 0 1px 2px rgba(23, 19, 15, 0.04), 0 12px 32px -14px rgba(23, 19, 15, 0.14);
   --shadow-lift: 0 2px 10px rgba(23, 19, 15, 0.06), 0 28px 56px -24px rgba(23, 19, 15, 0.26);
@@ -43,6 +46,7 @@
   --color-accent-ink: #ff8f60;
   --color-accent-2: #ff5a1f;
   --color-accent-soft: rgba(255, 122, 69, 0.13);
+  --color-outline: #6a615b;
 
   --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.4), 0 12px 32px -14px rgba(0, 0, 0, 0.7);
   --shadow-lift: 0 2px 10px rgba(0, 0, 0, 0.45), 0 28px 56px -24px rgba(0, 0, 0, 0.85);
@@ -135,10 +139,10 @@ body {
   mask-image: radial-gradient(70% 60% at 50% 40%, #000 0%, transparent 100%);
 }
 
-/* Used for the oversized outlined word in the hero. */
+/* Used for the oversized outlined surname in the hero. */
 .text-outline {
   color: transparent;
-  -webkit-text-stroke: 1.5px var(--color-border);
+  -webkit-text-stroke: 2px var(--color-outline);
 }
 
 @keyframes float {

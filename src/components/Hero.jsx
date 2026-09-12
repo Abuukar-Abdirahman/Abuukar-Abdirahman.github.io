@@ -138,7 +138,8 @@ export default function Hero() {
           </div>
 
           {/* "Working with" card, floating over the bottom-left corner. */}
-          <div className="absolute -bottom-6 -left-2 w-64 animate-float rounded-2xl border border-border bg-card/90 p-5 shadow-lift backdrop-blur-md sm:-left-8 sm:w-72">
+          {/* Sits low and to the left so it clears the subject's hands. */}
+          <div className="absolute -bottom-14 -left-3 w-64 animate-float rounded-2xl border border-border bg-card/90 p-5 shadow-lift backdrop-blur-md sm:-left-10 sm:w-72">
             <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-muted">
               {CURRENTLY_TITLE}
             </p>
