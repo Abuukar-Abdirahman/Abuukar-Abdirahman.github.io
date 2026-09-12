@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { PROFILE, CURRENTLY } from "../data";
+import { PROFILE, CURRENTLY, CURRENTLY_TITLE } from "../data";
 import { go } from "../nav";
 import { ArrowRight, ArrowDown, Download, Github, Linkedin, Mail, Check, Pin } from "./icons";
 
@@ -31,14 +31,13 @@ export default function Hero() {
       <div className="mx-auto grid max-w-6xl items-center gap-14 lg:grid-cols-[1.08fr_0.92fr] lg:gap-10">
         {/* ── Left column ─────────────────────────────────────── */}
         <div>
-          {PROFILE.available && (
+          {PROFILE.badge && (
             <div {...enter(0)}>
               <span className="inline-flex items-center gap-2.5 rounded-full border border-border bg-card px-3.5 py-1.5 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-muted shadow-soft">
-                <span className="relative grid h-1.5 w-1.5 place-items-center">
-                  <span className="absolute h-1.5 w-1.5 animate-pulse-ring rounded-full bg-accent" />
-                  <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-                </span>
-                Available for new projects
+                {/* Static dot: the badge now states a credential rather than a
+                    live status, so a pulsing "available now" indicator misreads. */}
+                <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+                {PROFILE.badge}
               </span>
             </div>
           )}
@@ -139,9 +138,9 @@ export default function Hero() {
           </div>
 
           {/* "Working with" card, floating over the bottom-left corner. */}
-          <div className="absolute -bottom-6 -left-2 w-60 animate-float rounded-2xl border border-border bg-card/90 p-5 shadow-lift backdrop-blur-md sm:-left-6 sm:w-68">
+          <div className="absolute -bottom-6 -left-2 w-64 animate-float rounded-2xl border border-border bg-card/90 p-5 shadow-lift backdrop-blur-md sm:-left-8 sm:w-72">
             <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-muted">
-              Working with
+              {CURRENTLY_TITLE}
             </p>
             <ul className="mt-3.5 flex flex-col gap-2.5">
               {CURRENTLY.map((item) => (

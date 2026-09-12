@@ -11,8 +11,7 @@ export const PROFILE = {
   lastName: "Abdirahman Ibrahim",
   initials: "AAI",
   role: "Full-Stack Developer",
-  tagline:
-    "I build Laravel backends, Flutter mobile apps and the telecom and payment integrations that connect them — and I own them from architecture to deployment.",
+  tagline: "Reliable backends, mobile apps, and the integrations that connect them.",
   email: "abuukarc.raxman12@gmail.com",
   phone: "+252 619 590 997",
   whatsapp: "252619590997",
@@ -21,7 +20,8 @@ export const PROFILE = {
   github: "https://github.com/Abuukar-Abdirahman",
   linkedin: "", // TODO: add your LinkedIn URL, e.g. https://linkedin.com/in/your-handle
   cv: "/Abukar_Abdirahman_CV.pdf",
-  available: true, // set false to hide the "available for work" badge
+  // Small pill above your name in the hero. Set to "" to hide it entirely.
+  badge: "3+ years building production systems",
 };
 
 // ── Contact form ─────────────────────────────────────────────
@@ -37,10 +37,13 @@ export const PROFILE = {
 // contact section anyway.
 export const FORM_ENDPOINT = `https://formsubmit.co/ajax/${PROFILE.email}`;
 
+// The floating card over the hero portrait.
+export const CURRENTLY_TITLE = "What I do";
 export const CURRENTLY = [
-  "Laravel & FilamentPHP",
-  "Flutter & Firebase",
-  "Telecom / payment APIs",
+  "Backend systems & REST APIs",
+  "iOS & Android apps",
+  "Telecom & payment integrations",
+  "Deployment & hosting",
   "AI-assisted development",
 ];
 
