@@ -77,7 +77,6 @@ export const STATS = [
   { value: 3, suffix: "+", label: "Years experience" },
   { value: 30, suffix: "+", label: "Projects delivered" },
   { value: 150, suffix: "+", label: "Apps deployed on Daato" },
-  { value: 50, suffix: "+", label: "Systems in production" },
 ];
 
 // Heading shown above the About paragraphs.
