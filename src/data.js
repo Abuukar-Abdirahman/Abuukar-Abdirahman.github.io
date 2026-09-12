@@ -47,18 +47,27 @@ export const CURRENTLY = [
   "AI-assisted development",
 ];
 
-// Scrolling ticker under the hero.
+// Scrolling ticker under the hero. Grouped backend → mobile → deploy →
+// integrations → tools. Keep it a highlight reel: past ~20 items it starts
+// reading as an inventory rather than a set of strengths.
 export const MARQUEE = [
   "Laravel",
   "PHP",
+  "Eloquent",
+  "Composer",
   "MySQL",
   "REST APIs",
   "FilamentPHP",
   "Flutter",
   "Firebase",
+  "Push notifications",
+  "Google Play",
+  "App Store",
   "DigitalOcean",
   "NGINX",
+  "SSH",
   "Hormuud API",
+  "Payment gateways",
   "Git & GitHub",
   "Mixpanel",
   "Claude Code",
@@ -66,9 +75,9 @@ export const MARQUEE = [
 
 export const STATS = [
   { value: 3, suffix: "+", label: "Years experience" },
-  { value: 10, suffix: "+", label: "Projects delivered" },
-  { value: 4, suffix: "", label: "Mobile apps shipped" },
-  { value: 3, suffix: "", label: "Languages spoken" },
+  { value: 30, suffix: "+", label: "Projects delivered" },
+  { value: 150, suffix: "+", label: "Apps deployed on Daato" },
+  { value: 50, suffix: "+", label: "Systems in production" },
 ];
 
 // Heading shown above the About paragraphs.
