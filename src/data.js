@@ -95,12 +95,24 @@ export const HIGHLIGHTS = [
 ];
 
 export const SKILLS = [
-  { icon: "code", title: "Backend", items: ["PHP", "Laravel", "REST API design", "FilamentPHP"] },
-  { icon: "phone", title: "Mobile", items: ["Flutter", "Firebase", "Google Play", "App Store"] },
-  { icon: "database", title: "Databases", items: ["MySQL", "Database design", "Query optimisation"] },
+  {
+    icon: "code",
+    title: "Backend",
+    items: ["PHP", "Laravel", "Eloquent", "REST API design", "FilamentPHP", "Roles & permissions"],
+  },
+  {
+    icon: "phone",
+    title: "Mobile",
+    items: ["Flutter", "Firebase", "Push notifications", "Google Play", "App Store"],
+  },
+  { icon: "database", title: "Databases", items: ["MySQL", "Schema design", "Migrations"] },
   { icon: "server", title: "Deployment", items: ["DigitalOcean", "NGINX", "SSH", "Git & GitHub"] },
-  { icon: "plug", title: "Integrations", items: ["Hormuud API", "Payment gateways", "Mixpanel"] },
-  { icon: "sparkle", title: "AI-assisted development", items: ["Claude Code"], accent: true },
+  {
+    icon: "plug",
+    title: "Integrations",
+    items: ["Hormuud", "Somtel", "Payment gateways", "Mixpanel"],
+  },
+  { icon: "sparkle", title: "AI & LLM APIs", items: ["Claude Code", "LLM APIs", "Prompt design"] },
 ];
 
 export const PROJECTS = [
