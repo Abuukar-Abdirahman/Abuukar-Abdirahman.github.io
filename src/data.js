@@ -111,8 +111,11 @@ export const SKILLS = [
     icon: "plug",
     title: "Integrations",
     items: ["Hormuud", "Somtel", "Payment gateways", "Mixpanel"],
+    // Highlighted: the rarest of these skills, and the one the featured
+    // project and the About copy both lead on.
+    accent: true,
   },
-  { icon: "sparkle", title: "AI & LLM APIs", items: ["Claude Code", "LLM APIs", "Prompt design"] },
+  { icon: "sparkle", title: "AI & LLM APIs", items: ["Claude Code", "LLM APIs", "NVIDIA APIs"] },
 ];
 
 export const PROJECTS = [
