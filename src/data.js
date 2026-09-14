@@ -205,8 +205,9 @@ export const TIMELINE = [
 
 // What you want to be hired for — shown in the contact section.
 export const SERVICES = [
-  "Laravel backend & REST API development",
-  "FilamentPHP admin panels and dashboards",
-  "Flutter mobile apps with Firebase",
-  "Telecom & payment gateway integrations",
+  "Web apps and REST APIs, built in Laravel",
+  "Mobile apps for iOS and Android, published to the App Store and Google Play",
+  "Admin dashboards to run your business",
+  "Mobile money, SMS and USSD automation",
+  "Deployment, hosting and ongoing support",
 ];
