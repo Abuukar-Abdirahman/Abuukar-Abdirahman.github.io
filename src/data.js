@@ -66,8 +66,8 @@ export const MARQUEE = [
   "DigitalOcean",
   "NGINX",
   "SSH",
-  "Hormuud API",
-  "Payment gateways",
+  "USSD automation",
+  "EVC-Plus",
   "Git & GitHub",
   "Mixpanel",
   "Claude Code",
@@ -110,7 +110,7 @@ export const SKILLS = [
   {
     icon: "plug",
     title: "Integrations",
-    items: ["Hormuud", "Somtel", "Payment gateways", "Mixpanel"],
+    items: ["USSD automation", "SMS parsing", "EVC-Plus", "Mixpanel"],
     // Highlighted: the rarest of these skills, and the one the featured
     // project and the About copy both lead on.
     accent: true,
@@ -123,11 +123,11 @@ export const PROJECTS = [
     icon: "phone",
     title: "Daato",
     role: "Full-stack developer",
-    summary: "Data-exchange platform for trading mobile bundles across telecom providers.",
+    summary: "Automated airtime, data and mobile-money top-ups for resellers.",
     description:
-      "A data-exchange app that lets users trade mobile data bundles across telecom providers including Hormuud and Somtel. Core logic in Laravel and MySQL, admin dashboard in FilamentPHP, and Hormuud API integration for telecom-side transactions.",
+      "Automates top-ups for resellers who sell airtime, data bundles and mobile money. A sender app on the shop's phone forwards incoming EVC-Plus payment SMS to Daato, which identifies the customer and amount, matches the right package, and dials the USSD code to deliver the top-up — then records the transaction, confirms delivery, and retries failed sends. I built the Laravel and MySQL core and the FilamentPHP dashboard resellers run their business from.",
     metric: { value: "150+", label: "apps deployed in the platform ecosystem" },
-    tags: ["Laravel", "MySQL", "FilamentPHP", "Hormuud API"],
+    tags: ["Laravel", "MySQL", "FilamentPHP", "USSD automation", "SMS parsing"],
     link: "", // TODO: Play Store / website link
     featured: true,
   },
@@ -135,21 +135,21 @@ export const PROJECTS = [
     icon: "phone",
     title: "Dawrah",
     role: "Full-stack developer",
-    summary: "Course platform delivered end to end, from Flutter UI to Laravel API.",
+    summary: "Cycle tracking with Islamic guidance for Muslim women.",
     description:
-      "Mobile app built with Flutter and Firebase on the front end, backed by a Laravel and MySQL system. Delivered end to end, from UI to backend API integration.",
+      "An app for Muslim women that combines period tracking with Islamic guidance on prayer, fasting and Taharah. It predicts cycles, logs symptoms, and includes a Ghusl guide, daily Quran verses and duas, and an anonymous community forum, in Somali and English. I built the Flutter app and the Laravel and MySQL backend behind it.",
     tags: ["Flutter", "Firebase", "Laravel", "MySQL"],
-    link: "", // TODO: Play Store / website link
+    link: "https://apps.apple.com/ca/app/dawrah/id6759103526",
   },
   {
     icon: "coffee",
     title: "Ossob Coffee",
     role: "Full-stack developer",
-    summary: "Ordering app with a FilamentPHP back office for products and orders.",
+    summary: "Coffee ordering app with cashback rewards and a membership tier.",
     description:
-      "Flutter and Firebase mobile app connected to a Laravel and MySQL backend, with product and order data managed through a FilamentPHP admin panel.",
+      "A mobile ordering app for a coffee shop. Customers browse the menu, order ahead, save favourite drinks, and earn 5% cashback on every purchase, with a paid membership tier for extra perks. Staff manage products and orders from a FilamentPHP back office. I built the Flutter app and the Laravel backend.",
     tags: ["Flutter", "Firebase", "Laravel", "FilamentPHP"],
-    link: "", // TODO: Play Store / website link
+    link: "https://apps.apple.com/ca/app/ossob-coffee/id6761236370",
   },
   {
     icon: "code",
@@ -198,7 +198,7 @@ export const TIMELINE = [
     kind: "Education",
     title: "BSc, Computer Science",
     org: "SIMAD University — Mogadishu, Somalia",
-    period: "", // TODO: add years
+    period: "2022 — 2026",
     points: [],
   },
 ];
